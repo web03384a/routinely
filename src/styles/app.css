@@ -7,6 +7,59 @@
   --routinely-soft: rgba(255, 255, 255, 0.78);
   --routinely-shadow: rgba(109, 75, 255, 0.12);
   --routinely-text: #2f2141;
+  --text-primary: #2f2141;
+  --text-strong: rgba(47, 33, 65, 0.78);
+  --text-secondary: rgba(47, 33, 65, 0.7);
+  --text-subtle: rgba(47, 33, 65, 0.6);
+  --text-tertiary: rgba(47, 33, 65, 0.55);
+  --text-quaternary: rgba(47, 33, 65, 0.5);
+  --text-soft: rgba(47, 33, 65, 0.45);
+  --text-inverse: #ffffff;
+  --surface-app-card: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.82));
+  --surface-footer: linear-gradient(120deg, rgba(255, 210, 102, 0.25), rgba(109, 75, 255, 0.15));
+  --surface-composer: rgba(255, 255, 255, 0.85);
+  --surface-composer-input: rgba(255, 255, 255, 0.7);
+  --surface-input-border: rgba(109, 75, 255, 0.15);
+  --surface-chip: rgba(109, 75, 255, 0.12);
+  --surface-chip-active: linear-gradient(135deg, var(--routinely-berry), var(--routinely-indigo));
+  --surface-chip-active-text: #ffffff;
+  --select-indicator: rgba(109, 75, 255, 0.6);
+  --surface-card-muted: rgba(255, 255, 255, 0.88);
+  --surface-card-border: rgba(109, 75, 255, 0.08);
+  --surface-card-shadow: rgba(109, 75, 255, 0.08);
+  --surface-empty: linear-gradient(145deg, rgba(119, 199, 255, 0.26), rgba(255, 77, 141, 0.2));
+  --surface-summary-card: rgba(255, 255, 255, 0.92);
+  --surface-summary-border: rgba(109, 75, 255, 0.08);
+  --surface-progress-track: rgba(109, 75, 255, 0.12);
+  --surface-remove-button: rgba(255, 255, 255, 0.7);
+  --surface-remove-button-hover: rgba(255, 255, 255, 0.9);
+  --surface-editor-backdrop: rgba(25, 18, 36, 0.5);
+  --surface-editor-panel: rgba(255, 255, 255, 0.97);
+  --surface-editor-shadow: rgba(23, 16, 46, 0.35);
+  --surface-editor-ghost: rgba(109, 75, 255, 0.14);
+  --surface-editor-ghost-hover: rgba(109, 75, 255, 0.2);
+  --surface-points: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 77, 141, 0.12),
+      transparent 63%
+    ),
+    radial-gradient(circle at 80% 30%, rgba(75, 225, 186, 0.18), transparent 65%),
+    rgba(255, 255, 255, 0.76);
+  --surface-points-border: rgba(109, 75, 255, 0.08);
+  --celebration-core-bg: radial-gradient(
+    circle at 50% 0%,
+    rgba(255, 212, 71, 0.6),
+    rgba(255, 255, 255, 0.9)
+  );
+  --celebration-core-shadow: rgba(47, 33, 65, 0.2);
+  --celebration-burst-mask: rgba(255, 255, 255, 0.6);
+  --celebration-message: rgba(47, 33, 65, 0.75);
+  --celebration-message-penalty: rgba(47, 33, 65, 0.6);
+  --button-complete-text: #2f2141;
+  --focus-outline: rgba(109, 75, 255, 0.6);
+  --text-accent: rgba(109, 75, 255, 0.9);
+  --text-highlight: rgba(109, 75, 255, 0.95);
+  --text-ghost-button: rgba(76, 54, 143, 0.95);
 }
 
 .app-shell {
@@ -17,7 +70,7 @@
 }
 
 .app-card {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.82));
+  background: var(--surface-app-card);
   border-radius: 32px;
   box-shadow: 0 30px 60px var(--routinely-shadow);
   padding: 2.8rem clamp(1.8rem, 3vw, 3.2rem);
@@ -42,7 +95,7 @@
   display: block;
   font-family: "Nunito", sans-serif;
   font-size: 0.9rem;
-  color: rgba(47, 33, 65, 0.7);
+  color: var(--text-secondary);
 }
 
 .app-card__section {
@@ -51,10 +104,10 @@
 
 .app-card__footer {
   margin-top: 2.6rem;
-  background: linear-gradient(120deg, rgba(255, 210, 102, 0.25), rgba(109, 75, 255, 0.15));
+  background: var(--surface-footer);
   border-radius: 18px;
   padding: 1.1rem 1.4rem;
-  color: rgba(47, 33, 65, 0.78);
+  color: var(--text-strong);
   font-weight: 600;
   text-align: center;
 }
@@ -62,24 +115,24 @@
 .habit-composer {
   display: grid;
   gap: 0.65rem;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--surface-composer);
   border-radius: 20px;
   padding: 0.9rem 1rem;
-  box-shadow: inset 0 0 0 1px rgba(109, 75, 255, 0.08);
+  box-shadow: inset 0 0 0 1px var(--surface-card-border);
 }
 
 .habit-composer__input,
 .habit-composer__select {
   width: 100%;
   border: none;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--surface-composer-input);
   padding: 0.65rem 0.9rem;
   font-size: 1rem;
   font-weight: 600;
   color: var(--routinely-text);
   border-radius: 12px;
   outline: none;
-  box-shadow: inset 0 0 0 1px rgba(109, 75, 255, 0.15);
+  box-shadow: inset 0 0 0 1px var(--surface-input-border);
 }
 
 .habit-composer__input:first-of-type {
@@ -89,15 +142,15 @@
 .habit-composer__select {
   cursor: pointer;
   appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, rgba(109, 75, 255, 0.6) 50%),
-    linear-gradient(135deg, rgba(109, 75, 255, 0.6) 50%, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, var(--select-indicator) 50%),
+    linear-gradient(135deg, var(--select-indicator) 50%, transparent 50%);
   background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 12px) calc(50% - 2px);
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
 }
 
 .habit-composer__input::placeholder {
-  color: rgba(47, 33, 65, 0.45);
+  color: var(--text-soft);
 }
 
 .habit-composer__row {
@@ -113,7 +166,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: rgba(47, 33, 65, 0.55);
+  color: var(--text-tertiary);
 }
 
 .habit-composer__days {
@@ -127,7 +180,7 @@
   border: none;
   padding: 0.45rem 0.65rem;
   border-radius: 12px;
-  background: rgba(109, 75, 255, 0.12);
+  background: var(--surface-chip);
   color: var(--routinely-text);
   font-weight: 600;
   cursor: pointer;
@@ -135,20 +188,20 @@
 }
 
 .habit-composer__day--active {
-  background: linear-gradient(135deg, var(--routinely-berry), var(--routinely-indigo));
-  color: white;
+  background: var(--surface-chip-active);
+  color: var(--surface-chip-active-text);
   transform: translateY(-1px);
 }
 
 .habit-composer__day:focus-visible {
-  outline: 2px solid rgba(109, 75, 255, 0.6);
+  outline: 2px solid var(--focus-outline);
   outline-offset: 2px;
 }
 
 .habit-composer__preview {
   margin: 0;
   font-size: 0.85rem;
-  color: rgba(47, 33, 65, 0.6);
+  color: var(--text-subtle);
   font-weight: 600;
 }
 
@@ -195,8 +248,8 @@
   text-align: center;
   padding: 2.8rem 2rem;
   border-radius: 24px;
-  background: linear-gradient(145deg, rgba(119, 199, 255, 0.26), rgba(255, 77, 141, 0.2));
-  color: rgba(47, 33, 65, 0.75);
+  background: var(--surface-empty);
+  color: var(--text-strong);
 }
 
 .habit-list__empty-title {
@@ -216,9 +269,9 @@
   gap: 1.2rem;
   padding: 1.1rem 1.4rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 16px 30px rgba(109, 75, 255, 0.08);
-  border: 1px solid rgba(109, 75, 255, 0.08);
+  background: var(--surface-card-muted);
+  box-shadow: 0 16px 30px var(--surface-card-shadow);
+  border: 1px solid var(--surface-card-border);
 }
 
 .habit-card__details {
@@ -236,18 +289,18 @@
   margin: 0.35rem 0 0;
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(47, 33, 65, 0.6);
+  color: var(--text-subtle);
 }
 
 .habit-card__meta {
   margin: 0.2rem 0 0;
   font-size: 0.85rem;
-  color: rgba(47, 33, 65, 0.55);
+  color: var(--text-tertiary);
 }
 
 .habit-card__meta--due {
   font-weight: 700;
-  color: rgba(109, 75, 255, 0.9);
+  color: var(--text-accent);
 }
 
 .habit-summary {
@@ -257,11 +310,11 @@
 }
 
 .habit-summary__card {
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--surface-summary-card);
   border-radius: 20px;
   padding: 1.2rem 1.4rem;
-  box-shadow: 0 18px 36px rgba(109, 75, 255, 0.08);
-  border: 1px solid rgba(109, 75, 255, 0.08);
+  box-shadow: 0 18px 36px var(--surface-card-shadow);
+  border: 1px solid var(--surface-summary-border);
 }
 
 .habit-summary__title {
@@ -277,13 +330,13 @@
   margin: 0.6rem 0 0;
   font-size: 1.25rem;
   font-weight: 700;
-  color: rgba(47, 33, 65, 0.9);
+  color: var(--text-primary);
 }
 
 .habit-summary__detail {
   margin: 0.35rem 0 0;
   font-size: 0.85rem;
-  color: rgba(47, 33, 65, 0.6);
+  color: var(--text-subtle);
   font-weight: 600;
 }
 
@@ -291,7 +344,7 @@
   margin: 0.55rem 0 0;
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(109, 75, 255, 0.95);
+  color: var(--text-highlight);
 }
 
 .habit-card__progress {
@@ -303,7 +356,7 @@
   width: 100%;
   height: 8px;
   border-radius: 999px;
-  background: rgba(109, 75, 255, 0.12);
+  background: var(--surface-progress-track);
   overflow: hidden;
 }
 
@@ -319,7 +372,7 @@
   margin-top: 0.35rem;
   font-size: 0.78rem;
   font-weight: 600;
-  color: rgba(47, 33, 65, 0.5);
+  color: var(--text-quaternary);
 }
 
 .habit-card__actions {
@@ -334,7 +387,7 @@
   padding: 0.55rem 1.3rem;
   font-weight: 700;
   background: linear-gradient(135deg, var(--routinely-mint), var(--routinely-sun));
-  color: #2f2141;
+  color: var(--button-complete-text);
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -346,8 +399,8 @@
 
 .habit-card__remove {
   border: none;
-  background: rgba(255, 255, 255, 0.7);
-  color: rgba(47, 33, 65, 0.45);
+  background: var(--surface-remove-button);
+  color: var(--text-soft);
   font-size: 1.4rem;
   line-height: 1;
   width: 2.4rem;
@@ -359,7 +412,7 @@
 
 .habit-card__remove:hover {
   transform: rotate(-8deg);
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--surface-remove-button-hover);
 }
 
 .habit-card__remove:focus-visible {
@@ -379,16 +432,16 @@
 .habit-editor__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(25, 18, 36, 0.5);
+  background: var(--surface-editor-backdrop);
 }
 
 .habit-editor__panel {
   position: relative;
   width: min(520px, calc(100% - 2.5rem));
-  background: rgba(255, 255, 255, 0.97);
+  background: var(--surface-editor-panel);
   border-radius: 24px;
   padding: 1.6rem;
-  box-shadow: 0 30px 80px rgba(23, 16, 46, 0.35);
+  box-shadow: 0 30px 80px var(--surface-editor-shadow);
   display: grid;
   gap: 1rem;
   z-index: 1;
@@ -428,13 +481,13 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: rgba(47, 33, 65, 0.55);
+  color: var(--text-tertiary);
 }
 
 .habit-editor__hint {
   margin: 0.35rem 0 0;
   font-size: 0.8rem;
-  color: rgba(47, 33, 65, 0.5);
+  color: var(--text-quaternary);
 }
 
 .habit-editor__grid {
@@ -471,8 +524,8 @@
 }
 
 .habit-editor__button--ghost {
-  background: rgba(109, 75, 255, 0.14);
-  color: rgba(76, 54, 143, 0.95);
+  background: var(--surface-editor-ghost);
+  color: var(--text-ghost-button);
 }
 
 .habit-composer__button--launcher {
@@ -483,7 +536,7 @@
 }
 
 .habit-editor__button--ghost:hover {
-  background: rgba(109, 75, 255, 0.2);
+  background: var(--surface-editor-ghost-hover);
 }
 
 .points-galaxy {
@@ -491,11 +544,9 @@
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
   padding: 1rem 1.2rem;
-  background: radial-gradient(circle at 20% 20%, rgba(255, 77, 141, 0.12), transparent 63%),
-    radial-gradient(circle at 80% 30%, rgba(75, 225, 186, 0.18), transparent 65%),
-    rgba(255, 255, 255, 0.76);
+  background: var(--surface-points);
   border-radius: 24px;
-  border: 1px solid rgba(109, 75, 255, 0.08);
+  border: 1px solid var(--surface-points-border);
   position: relative;
   overflow: hidden;
 }
@@ -531,7 +582,7 @@
   align-items: center;
   justify-content: space-between;
   font-weight: 700;
-  color: rgba(47, 33, 65, 0.7);
+  color: var(--text-secondary);
 }
 
 .points-galaxy__bar {
@@ -539,7 +590,7 @@
   width: 100%;
   height: 0.7rem;
   border-radius: 999px;
-  background: rgba(109, 75, 255, 0.1);
+  background: var(--surface-progress-track);
   overflow: hidden;
 }
 
@@ -553,7 +604,7 @@
 .points-galaxy__count {
   margin: 0;
   font-size: 0.9rem;
-  color: rgba(47, 33, 65, 0.7);
+  color: var(--text-secondary);
 }
 
 .celebration-overlay {
@@ -570,8 +621,8 @@
   position: relative;
   padding: 1.6rem 2.4rem;
   border-radius: 24px;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 212, 71, 0.6), rgba(255, 255, 255, 0.9));
-  box-shadow: 0 30px 50px rgba(47, 33, 65, 0.2);
+  background: var(--celebration-core-bg);
+  box-shadow: 0 30px 50px var(--celebration-core-shadow);
   text-align: center;
   pointer-events: auto;
 }
@@ -580,7 +631,7 @@
   position: absolute;
   inset: -40%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent 65%);
+  background: radial-gradient(circle, var(--celebration-burst-mask), transparent 65%);
   z-index: -1;
 }
 
@@ -594,12 +645,12 @@
 .celebration-overlay__message {
   margin: 0.6rem 0 0;
   font-weight: 600;
-  color: rgba(47, 33, 65, 0.75);
+  color: var(--celebration-message);
 }
 
 .celebration-overlay__message--penalty {
   font-size: 0.95rem;
-  color: rgba(47, 33, 65, 0.6);
+  color: var(--celebration-message-penalty);
 }
 
 .celebration-overlay__penalty {
@@ -621,6 +672,80 @@
   height: 16px;
   border-radius: 30% 70% 65% 35%;
   mix-blend-mode: screen;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --routinely-soft: rgba(24, 27, 44, 0.82);
+    --routinely-shadow: rgba(4, 5, 8, 0.65);
+    --routinely-text: #f5f2ff;
+    --text-primary: #f5f2ff;
+    --text-strong: rgba(245, 242, 255, 0.85);
+    --text-secondary: rgba(245, 242, 255, 0.72);
+    --text-subtle: rgba(245, 242, 255, 0.68);
+    --text-tertiary: rgba(245, 242, 255, 0.6);
+    --text-quaternary: rgba(245, 242, 255, 0.55);
+    --text-soft: rgba(245, 242, 255, 0.48);
+    --text-accent: rgba(174, 156, 255, 0.92);
+    --text-highlight: rgba(174, 156, 255, 0.96);
+    --text-ghost-button: rgba(214, 205, 255, 0.82);
+    --surface-app-card: linear-gradient(
+      160deg,
+      rgba(21, 24, 36, 0.92),
+      rgba(31, 26, 49, 0.82)
+    );
+    --surface-footer: linear-gradient(
+      120deg,
+      rgba(255, 210, 102, 0.12),
+      rgba(109, 75, 255, 0.2)
+    );
+    --surface-composer: rgba(23, 27, 45, 0.9);
+    --surface-composer-input: rgba(15, 18, 32, 0.88);
+    --surface-input-border: rgba(156, 137, 255, 0.28);
+    --surface-chip: rgba(109, 75, 255, 0.32);
+    --surface-card-muted: rgba(20, 23, 39, 0.9);
+    --surface-card-border: rgba(156, 137, 255, 0.25);
+    --surface-card-shadow: rgba(4, 5, 8, 0.65);
+    --surface-empty: linear-gradient(
+      145deg,
+      rgba(119, 199, 255, 0.16),
+      rgba(255, 77, 141, 0.12)
+    );
+    --surface-summary-card: rgba(19, 22, 38, 0.92);
+    --surface-summary-border: rgba(156, 137, 255, 0.25);
+    --surface-progress-track: rgba(109, 75, 255, 0.35);
+    --surface-remove-button: rgba(35, 29, 52, 0.88);
+    --surface-remove-button-hover: rgba(44, 37, 64, 0.9);
+    --surface-editor-backdrop: rgba(3, 4, 8, 0.7);
+    --surface-editor-panel: rgba(21, 24, 38, 0.96);
+    --surface-editor-shadow: rgba(2, 3, 6, 0.6);
+    --surface-editor-ghost: rgba(109, 75, 255, 0.22);
+    --surface-editor-ghost-hover: rgba(109, 75, 255, 0.3);
+    --surface-points: radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 77, 141, 0.18),
+        transparent 63%
+      ),
+      radial-gradient(circle at 80% 30%, rgba(75, 225, 186, 0.2), transparent 65%),
+      rgba(21, 24, 38, 0.92);
+    --surface-points-border: rgba(156, 137, 255, 0.25);
+    --celebration-core-bg: radial-gradient(
+      circle at 50% 0%,
+      rgba(109, 75, 255, 0.45),
+      rgba(24, 27, 44, 0.92)
+    );
+    --celebration-core-shadow: rgba(0, 0, 0, 0.45);
+    --celebration-burst-mask: rgba(255, 255, 255, 0.24);
+    --celebration-message: rgba(245, 242, 255, 0.82);
+    --celebration-message-penalty: rgba(245, 242, 255, 0.65);
+    --button-complete-text: #0e0f1c;
+    --focus-outline: rgba(156, 137, 255, 0.6);
+    --select-indicator: rgba(174, 156, 255, 0.75);
+  }
+
+  .celebration-overlay {
+    background: rgba(8, 10, 18, 0.35);
+  }
 }
 
 @media (max-width: 720px) {

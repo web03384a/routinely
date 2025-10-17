@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap");
 
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   font-family: "Nunito", "Baloo 2", system-ui, -apple-system, sans-serif;
-  background-color: #fff6f0;
+  --page-background-color: #fff6f0;
+  --page-background-gradient: radial-gradient(120% 120% at 50% 0%, #ffe0f2 0%, #fff7d6 35%, #fff 70%);
+  --page-text-color: #2f2141;
+  background-color: var(--page-background-color);
 }
 
 *,
@@ -15,8 +18,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(120% 120% at 50% 0%, #ffe0f2 0%, #fff7d6 35%, #fff 70%);
-  color: #2f2141;
+  background: var(--page-background-gradient);
+  color: var(--page-text-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,4 +31,17 @@ body {
 
 button {
   font-family: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-background-color: #090b14;
+    --page-background-gradient: radial-gradient(
+      120% 150% at 50% 0%,
+      #201836 0%,
+      #101a2b 40%,
+      #080b12 80%
+    );
+    --page-text-color: #f5f2ff;
+  }
 }
