@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { HabitCompletion, HabitFrequency, HabitTask, HabitType } from "../types";
+import type { HabitCompletion, HabitFrequency, HabitTask, HabitType } from "../types";
 import { isSameDay, normalizeDateKey, todayKey } from "../utils/date";
 import {
   countDueOccurrencesBetween,

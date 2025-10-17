@@ -6,8 +6,9 @@ import { HabitList } from "./components/HabitList";
 import { HabitSummaryPanel } from "./components/HabitSummaryPanel";
 import { PointsGalaxyPanel } from "./components/PointsGalaxyPanel";
 import { HabitEditorOverlay } from "./components/HabitEditorOverlay";
-import { CompleteHabitOptions, NewHabitInput, RewardDetails, useHabitStore } from "./hooks/useHabitStore";
-import { HabitTask } from "./types";
+import type { CompleteHabitOptions, NewHabitInput, RewardDetails } from "./hooks/useHabitStore";
+import { useHabitStore } from "./hooks/useHabitStore";
+import type { HabitTask } from "./types";
 import "./styles/app.css";
 
 type ActiveReward = (RewardDetails & { visualId: string }) | null;
