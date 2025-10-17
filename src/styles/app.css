@@ -344,26 +344,6 @@
   background: linear-gradient(135deg, rgba(75, 225, 186, 0.45), rgba(255, 212, 71, 0.4));
 }
 
-.habit-card__edit {
-  border: none;
-  border-radius: 12px;
-  padding: 0.45rem 1rem;
-  font-weight: 600;
-  background: rgba(109, 75, 255, 0.12);
-  color: rgba(76, 54, 143, 0.95);
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.habit-card__edit:hover {
-  background: rgba(109, 75, 255, 0.2);
-}
-
-.habit-card__edit:focus-visible {
-  outline: 2px solid rgba(109, 75, 255, 0.6);
-  outline-offset: 2px;
-}
-
 .habit-card__remove {
   border: none;
   background: rgba(255, 255, 255, 0.7);
@@ -412,6 +392,23 @@
   display: grid;
   gap: 1rem;
   z-index: 1;
+}
+
+.habit-editor__panel--composer {
+  gap: 1.25rem;
+}
+
+.habit-editor__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.habit-editor--composer .habit-composer {
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
 }
 
 .habit-editor__title {
@@ -476,6 +473,13 @@
 .habit-editor__button--ghost {
   background: rgba(109, 75, 255, 0.14);
   color: rgba(76, 54, 143, 0.95);
+}
+
+.habit-composer__button--launcher {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .habit-editor__button--ghost:hover {

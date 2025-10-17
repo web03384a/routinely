@@ -4,17 +4,21 @@ import { useEffect } from "react";
 type PointsGalaxyPanelProps = {
   totalPoints: number;
   completedToday: number;
-  totalHabits: number;
+  dueToday: number;
 };
 
 export const PointsGalaxyPanel = ({
   totalPoints,
   completedToday,
-  totalHabits
+  dueToday
 }: PointsGalaxyPanelProps) => {
   const controls = useAnimationControls();
-  const completionRatio = totalHabits === 0 ? 0 : completedToday / totalHabits;
-  const completionPercent = Math.round(completionRatio * 100);
+  const completionRatio = dueToday === 0 ? 1 : completedToday / dueToday;
+  const completionPercent = Math.round(Math.min(1, Math.max(0, completionRatio)) * 100);
+  const progressLabel =
+    dueToday === 0
+      ? "Nothing scheduled today—enjoy the pause."
+      : `${completedToday} / ${dueToday} habit${dueToday === 1 ? "" : "s"} glowing today`;
 
   useEffect(() => {
     controls.start({
@@ -44,7 +48,7 @@ export const PointsGalaxyPanel = ({
           />
         </div>
         <p className="points-galaxy__count">
-          {completedToday} / {totalHabits || "none"} habits glowing today
+          {progressLabel}
         </p>
       </div>
     </motion.div>

@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { CelebrationBurstOverlay } from "./components/CelebrationBurstOverlay";
-import { HabitComposer } from "./components/HabitComposer";
+import { HabitComposerOverlay } from "./components/HabitComposerOverlay";
 import { HabitList } from "./components/HabitList";
 import { HabitSummaryPanel } from "./components/HabitSummaryPanel";
 import { PointsGalaxyPanel } from "./components/PointsGalaxyPanel";
-import { HabitEditorOverlay } from "./components/HabitEditorOverlay";
 import type { CompleteHabitOptions, NewHabitInput, RewardDetails } from "./hooks/useHabitStore";
 import { useHabitStore } from "./hooks/useHabitStore";
-import type { HabitTask } from "./types";
 import "./styles/app.css";
 
 type ActiveReward = (RewardDetails & { visualId: string }) | null;
@@ -18,16 +16,14 @@ const App = () => {
     addTask,
     completeTask,
     removeTask,
-    updateTask,
     tasks,
     tasksCompletedToday,
+    tasksDueToday,
     totalPoints,
     completionLog
   } = useHabitStore();
   const [activeReward, setActiveReward] = useState<ActiveReward>(null);
-  const [editingHabit, setEditingHabit] = useState<HabitTask | null>(null);
-
-  const totalHabits = tasks.length;
+  const [isComposerOpen, setIsComposerOpen] = useState(false);
 
   const handleCompleteHabit = (taskId: string, options?: CompleteHabitOptions) => {
     const reward = completeTask(taskId, options);
@@ -41,12 +37,7 @@ const App = () => {
 
   const handleCreateHabit = (input: NewHabitInput) => {
     addTask(input);
-  };
-
-  const handleSaveHabit = (input: NewHabitInput) => {
-    if (!editingHabit) return;
-    updateTask(editingHabit.id, input);
-    setEditingHabit(null);
+    setIsComposerOpen(false);
   };
 
   useEffect(() => {
@@ -71,12 +62,18 @@ const App = () => {
           <PointsGalaxyPanel
             totalPoints={totalPoints}
             completedToday={tasksCompletedToday}
-            totalHabits={totalHabits}
+            dueToday={tasksDueToday}
           />
         </header>
 
         <section className="app-card__section">
-          <HabitComposer onCreateHabit={handleCreateHabit} />
+          <button
+            type="button"
+            className="habit-composer__button habit-composer__button--launcher"
+            onClick={() => setIsComposerOpen(true)}
+          >
+            Add a new habit
+          </button>
         </section>
 
         <section className="app-card__section">
@@ -84,7 +81,6 @@ const App = () => {
             tasks={tasks}
             onCompleteHabit={handleCompleteHabit}
             onRemoveHabit={removeTask}
-            onEditHabit={(task) => setEditingHabit(task)}
           />
         </section>
 
@@ -98,11 +94,10 @@ const App = () => {
       </motion.main>
 
       <CelebrationBurstOverlay reward={activeReward} onClose={() => setActiveReward(null)} />
-      {editingHabit && (
-        <HabitEditorOverlay
-          habit={editingHabit}
-          onSave={handleSaveHabit}
-          onCancel={() => setEditingHabit(null)}
+      {isComposerOpen && (
+        <HabitComposerOverlay
+          onCreateHabit={handleCreateHabit}
+          onCancel={() => setIsComposerOpen(false)}
         />
       )}
     </div>

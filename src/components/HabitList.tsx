@@ -8,7 +8,6 @@ type HabitListProps = {
   tasks: HabitTask[];
   onCompleteHabit: (taskId: string, options?: CompleteHabitOptions) => void;
   onRemoveHabit: (taskId: string) => void;
-  onEditHabit?: (task: HabitTask) => void;
 };
 
 const listVariants = {
@@ -57,7 +56,7 @@ const describeFrequency = (task: HabitTask): string => {
   return `Every ${task.frequency.intervalDays} days · starts ${weekday}`;
 };
 
-export const HabitList = ({ tasks, onCompleteHabit, onRemoveHabit, onEditHabit }: HabitListProps) => {
+export const HabitList = ({ tasks, onCompleteHabit, onRemoveHabit }: HabitListProps) => {
   const today = todayKey();
 
   if (tasks.length === 0) {
@@ -142,13 +141,6 @@ export const HabitList = ({ tasks, onCompleteHabit, onRemoveHabit, onEditHabit }
                 animate={{ opacity: completedToday || !isDueToday ? 0.6 : 1 }}
               >
                 {completedToday ? "Done!" : isDueToday ? "Complete" : "Not today"}
-              </motion.button>
-              <motion.button
-                className="habit-card__edit"
-                onClick={() => onEditHabit?.(task)}
-                whileTap={{ scale: 0.94 }}
-              >
-                Edit
               </motion.button>
               <motion.button
                 className="habit-card__remove"

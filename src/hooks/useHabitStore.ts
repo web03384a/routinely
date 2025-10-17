@@ -117,6 +117,7 @@ export type HabitStore = {
   tasks: HabitTask[];
   totalPoints: number;
   tasksCompletedToday: number;
+  tasksDueToday: number;
   completionLog: HabitCompletion[];
   addTask: (input: NewHabitInput) => void;
   updateTask: (taskId: string, input: NewHabitInput) => void;
@@ -290,15 +291,33 @@ export const useHabitStore = (): HabitStore => {
     setState(defaultState);
   }, []);
 
-  const tasksCompletedToday = useMemo(() => {
+  const { tasksCompletedToday, tasksDueToday } = useMemo(() => {
     const today = todayKey();
-    return state.tasks.filter((task) => isSameDay(task.lastCompletedOn, today)).length;
+    let completed = 0;
+    let due = 0;
+
+    state.tasks.forEach((task) => {
+      if (!isHabitDueOnDate(task, today)) {
+        return;
+      }
+
+      due += 1;
+      if (isSameDay(task.lastCompletedOn, today)) {
+        completed += 1;
+      }
+    });
+
+    return {
+      tasksCompletedToday: completed,
+      tasksDueToday: due
+    };
   }, [state.tasks]);
 
   return {
     tasks: state.tasks,
     totalPoints: state.totalPoints,
     tasksCompletedToday,
+    tasksDueToday,
     completionLog: state.completionLog,
     addTask,
     updateTask,
