@@ -1,4 +1,4 @@
-import { HabitFrequency, HabitTask, Weekday } from "../types";
+import type { HabitFrequency, HabitTask, Weekday } from "../types";
 import { addDays, getWeekday, isSameDay, normalizeDateKey } from "./date";
 
 const MAX_LOOKBACK_DAYS = 365;

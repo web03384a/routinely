@@ -1,7 +1,8 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import type { FormEvent } from "react";
 import { motion } from "framer-motion";
-import { NewHabitInput } from "../hooks/useHabitStore";
-import { HabitType, Weekday } from "../types";
+import type { NewHabitInput } from "../hooks/useHabitStore";
+import type { HabitType, Weekday } from "../types";
 import { addDays, getWeekday, todayKey } from "../utils/date";
 
 type HabitComposerProps = {

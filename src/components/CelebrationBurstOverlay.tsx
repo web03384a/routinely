@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo } from "react";
-import { RewardDetails } from "../hooks/useHabitStore";
+import type { RewardDetails } from "../hooks/useHabitStore";
 
 type CelebrationBurstOverlayProps = {
   reward: (RewardDetails & { visualId: string }) | null;
@@ -10,15 +10,16 @@ type CelebrationBurstOverlayProps = {
 const confettiPalette = ["#FF4D8D", "#FFD447", "#6D4BFF", "#4BE1BA", "#FF9153"];
 
 export const CelebrationBurstOverlay = ({ reward, onClose }: CelebrationBurstOverlayProps) => {
+  const rewardId = reward?.visualId;
   const sparkShapes = useMemo(() => {
-    if (!reward) return [];
+    if (!rewardId) return [];
     return Array.from({ length: 12 }, (_, index) => {
       const color = confettiPalette[index % confettiPalette.length];
       const distance = 80 + Math.random() * 50;
       const angle = (index / 12) * 360 + Math.random() * 20;
       return { color, distance, angle };
     });
-  }, [reward?.visualId]);
+  }, [rewardId]);
 
   return (
     <AnimatePresence>
@@ -66,7 +67,7 @@ export const CelebrationBurstOverlay = ({ reward, onClose }: CelebrationBurstOve
             <div className="celebration-overlay__sparks">
               {sparkShapes.map((spark, index) => (
                 <motion.span
-                  key={`${reward.visualId}-${index}`}
+                  key={`${rewardId}-${index}`}
                   className="celebration-overlay__spark"
                   style={{
                     backgroundColor: spark.color,

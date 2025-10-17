@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { CompleteHabitOptions } from "../hooks/useHabitStore";
-import { HabitTask } from "../types";
+import type { CompleteHabitOptions } from "../hooks/useHabitStore";
+import type { HabitTask } from "../types";
 import { addDays, isSameDay, todayKey } from "../utils/date";
 import { isHabitDueOnDate } from "../utils/habits";
 

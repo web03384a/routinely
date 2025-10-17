@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { HabitCompletion, HabitTask } from "../types";
+import type { HabitCompletion, HabitTask } from "../types";
 import { todayKey } from "../utils/date";
 
 type HabitSummaryPanelProps = {
