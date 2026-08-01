@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: List files
         run: ls -al
 
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
@@ -42,7 +42,7 @@ jobs:
       - name: Archive dependencies
         run: tar -czf node_modules.tar.gz node_modules
       - name: Upload dependencies artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: node-modules
           path: node_modules.tar.gz
@@ -54,14 +54,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
       - name: Restore dependencies artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: node-modules
           path: .
