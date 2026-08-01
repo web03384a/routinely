@@ -42,7 +42,7 @@ jobs:
       - name: Archive dependencies
         run: tar -czf node_modules.tar.gz node_modules
       - name: Upload dependencies artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: node-modules
           path: node_modules.tar.gz
