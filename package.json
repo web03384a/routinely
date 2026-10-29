@@ -14,7 +14,7 @@
     "osv:scan": "node scripts/osv-scan.mjs"
   },
   "dependencies": {
-    "framer-motion": "^11.0.10",
+    "framer-motion": "^14.6.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
