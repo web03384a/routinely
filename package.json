@@ -15,19 +15,19 @@
   },
   "dependencies": {
     "framer-motion": "^11.0.10",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@types/node": "^26.1.2",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "@typescript-eslint/eslint-plugin": "^8.66.0",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.72.0",
     "@typescript-eslint/parser": "^8.66.0",
     "@vitejs/plugin-react-swc": "^4.3.3",
-    "eslint": "^10.8.0",
+    "eslint": "^10.13.0",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.3",
+    "eslint-plugin-react-refresh": "^0.5.7",
     "typescript": "^6.0.3",
     "vite": "^8.3.4",
     "@eslint/js": "^10.0.0",
